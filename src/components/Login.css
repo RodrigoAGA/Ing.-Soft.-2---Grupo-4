@@ -1,0 +1,125 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.login-image img {
+  width: 50vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-form {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-form h2 {
+  text-align: left;
+  margin-left: 170px;
+  width: 100%;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.login-form form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remember-forgot div {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.remember-forgot input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.remember-forgot label {
+  line-height: 1;
+}
+
+.remember-forgot a {
+  font-size: 14px;
+  line-height: 1;
+}
+
+
+button {
+  padding: 10px;
+  background-color: #007b5e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005b47;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-login button {
+  width: 48%;
+}
+
+.google-login {
+  background-color: #db4437;
+}
+
+.apple-login {
+  background-color: #000;
+}
+
+.social-login button:hover {
+  opacity: 0.8;
+}
+
+.login-form p {
+  text-align: left;
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+.login-form p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form p a:hover {
+  text-decoration: underline;
+}
