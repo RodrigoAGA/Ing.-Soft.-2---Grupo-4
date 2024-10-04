@@ -1,0 +1,110 @@
+.soporte-container {
+  display: flex;
+  height: 100vh;
+}
+
+.soporte-image {
+  width: 50vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.soporte-image img {
+  width: 50vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.soporte-form {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.soporte-form h2 {
+  text-align: left;
+  margin-left: 170px;
+  width: 100%;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.soporte-form form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.soporte-form .form-group {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.soporte-form label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+
+.soporte-form input,
+.soporte-form select,
+.soporte-form textarea {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.soporte-form textarea {
+  resize: none;
+}
+
+.soporte-form .name-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.soporte-form .name-container .form-group {
+  width: 48%;
+}
+
+.soporte-form .checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: -200px;
+  margin-bottom: 10px;
+}
+
+.soporte-form .checkbox-group label {
+  margin-left: -180px;
+}
+
+.soporte-form .submit-group {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.soporte-form button {
+  padding: 15px;
+  background-color: #007b5e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.soporte-form button:hover {
+  background-color: #005b47;
+}
