@@ -40,7 +40,8 @@ const Signup = () => {
             <button className="apple-signup">Sign up with Apple</button>
           </div>
 
-          <p>Already have an account? <a href="#">Log In</a></p>
+          <p>Already have an account? <a href="/login">Log In</a></p>
+  
         </form>
       </div>
     </div>
