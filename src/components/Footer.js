@@ -21,11 +21,11 @@ const Footer = () => {
             </ul>
           </nav>
           <div className="social-icons">
-            <a href="#"><img src="yt.png" alt="YouTube" /></a>
-            <a href="#"><img src="fb.png" alt="Facebook" /></a>
-            <a href="#"><img src="twtt.png" alt="Twitter" /></a>
-            <a href="#"><img src="insta.png" alt="Instagram" /></a>
-            <a href="#"><img src="linke.png" alt="LinkedIn" /></a>
+            <a href="#"><img src="youtube.png" alt="YouTube" /></a>
+            <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+            <a href="#"><img src="twitteer.png" alt="Twitter" /></a>
+            <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+            <a href="#"><img src="linkedin.png" alt="LinkedIn" /></a>
           </div>
           <p className="footer-rights">Allpa Distribuidores © 2023. All rights reserved.</p>
         </div>
