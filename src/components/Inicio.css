@@ -1,0 +1,224 @@
+.inicio-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Primera Cara */
+.inicio-hero {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  color: white;
+  text-align: left;
+  max-width: 700px;
+  margin-right: 1000px;
+  margin-top: 60px;
+}
+
+.hero-content h1 {
+  font-size: 3.6rem;
+  margin-bottom: 65px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 10px;
+  margin-top: 80px;
+}
+
+.btn-primary {
+  background-color: #007b5e;
+  color: white;
+  border: 3px solid #007b5e;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #004d40;
+  border: 3px solid #004d40;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #004d40;
+  color: white;
+  border: 3px solid #004d40;
+}
+
+.btn-secondary:hover {
+  background-color: #004d40;
+  color: white;
+  border: 3px solid #004d40;
+}
+
+/* Segunda Cara */
+.inicio-servicios {
+  padding: 60px 20px;
+  background-color: white;
+  text-align: left;
+}
+
+.inicio-servicios h2 {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  text-align: left;
+  margin-left: 175px;
+}
+
+.servicios-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+}
+
+.servicio {
+  max-width: 300px;
+  text-align: left;
+}
+
+.servicio img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.servicio h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.servicio p {
+  margin-bottom: 10px;
+}
+
+.servicio a {
+  color: #007b5e;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.servicio a:hover {
+  text-decoration: underline;
+}
+
+/* Estadísticas */
+.estadisticas {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: left;
+  margin-left: 145px;
+}
+
+.estadisticas-header {
+  margin-top: -20px;
+  margin-bottom: 80px;
+  width: 33%;
+}
+
+.estadisticas h3 {
+  font-size: 3.6rem;
+}
+
+.estadisticas p {
+  font-size: 1.2rem;
+  margin-top: -35px;
+}
+
+.estadisticas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  grid-gap: 20px;
+  justify-items: start;
+  margin-left: 900px;
+  margin-top: -300px;
+}
+
+.estadistica-item {
+  display: flex;
+  align-items: center;
+  max-width: 250px;
+}
+
+.estadistica-item img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  margin-bottom: -20px;
+}
+
+.estadisticas h4 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.estadistica-texto h4 {
+  font-size: 2.3rem;
+  color: rgb(0, 0, 0);
+}
+
+.estadistica-texto p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Tercera Cara */
+.inicio-app {
+  background-color: #73C39B;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-content {
+  max-width: 690px;
+  margin-left: 160px;
+  text-align: left;
+}
+
+.app-content h2 {
+  font-size: 3.6rem;
+  margin-bottom: 20px;
+}
+
+.app-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.app-buttons img {
+  width: 160px;
+  margin-right: 20px;
+  cursor: pointer; /* Hace que el cursor cambie al pasar sobre los botones */
+}
+
+.app-images {
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
+  gap: 100px;
+  margin-left: -1000px;
+}
+
+.app-images img {
+  width: 250px;
+}
