@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Signup.css';
 
 const Signup = () => {
+  const [accountType, setAccountType] = useState('');
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    console.log('Registrando tipo de cuenta:', accountType);
+  };
+
   return (
     <div className="signup-container">
       <div className="signup-image">
@@ -9,7 +16,7 @@ const Signup = () => {
       </div>
       <div className="signup-form">
         <h2>Sign Up</h2>
-        <form>
+        <form onSubmit={handleSignup}>
           <div className="name-fields">
             <div className="first-name-field">
               <label htmlFor="firstName">First Name</label>
@@ -25,13 +32,38 @@ const Signup = () => {
           <label htmlFor="email">Email</label>
           <input type="email" id="email" placeholder="Email" required />
 
+          <div className="account-type">
+            <label>Tipo de cuenta:</label>
+            <div className="radio-buttons">
+              <label>
+                <input 
+                  type="radio" 
+                  name="accountType" 
+                  value="proveedor" 
+                  checked={accountType === 'proveedor'} 
+                  onChange={(e) => setAccountType(e.target.value)} 
+                  required 
+                />
+                Soy proveedor
+              </label>
+              <label>
+                <input 
+                  type="radio" 
+                  name="accountType" 
+                  value="empresa" 
+                  checked={accountType === 'empresa'} 
+                  onChange={(e) => setAccountType(e.target.value)} 
+                />
+                Soy empresa
+              </label>
+            </div>
+          </div>
+
           <label htmlFor="password">Password</label>
           <input type="password" id="password" placeholder="Password" required />
 
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
-
-          {/* Checkbox y texto eliminados */}
 
           <button type="submit">Sign Up</button>
 
@@ -41,7 +73,6 @@ const Signup = () => {
           </div>
 
           <p>Already have an account? <a href="/login">Log In</a></p>          
-
         </form>
       </div>
     </div>
