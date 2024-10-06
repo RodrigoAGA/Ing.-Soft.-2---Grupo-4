@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="social-icons">
             <a href="#"><img src="youtube.png" alt="YouTube" /></a>
             <a href="#"><img src="facebook.png" alt="Facebook" /></a>
-            <a href="#"><img src="twitteer.png" alt="Twitter" /></a>
+            <a href="#"><img src="twitter.png" alt="Twitter" /></a>
             <a href="#"><img src="instagram.png" alt="Instagram" /></a>
             <a href="#"><img src="linkedin.png" alt="LinkedIn" /></a>
           </div>
