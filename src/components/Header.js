@@ -8,13 +8,13 @@ const Header = () => {
         <img src={process.env.PUBLIC_URL + '/allpa-logo.png'} alt="Allpa Logo" />
       </div>
       <nav className="nav-links">
-        <a href="#">Inicio</a>
-        <a href="#">Pedidos</a>
+        <a href="/inicio">Inicio</a>
+        <a href="/pedidos">Pedidos</a>
         <a href="#">Productos</a>
         <a href="#">Sobre nosotros</a>
         <div className="support-dropdown">
-          <a href="#">Soporte &#9662;</a>
-        </div>
+          <a href="/soporte">Soporte &#9662;</a>
+        </div>  
       </nav>
       <div className="icons">
         <img src={process.env.PUBLIC_URL + '/notification-icon.png'} alt="Notifications" />
