@@ -3,6 +3,20 @@
     text-align: center;
 }
 
+.titulo {
+    margin-top: -5px;
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #007b5e;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: #000;
+}
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -77,44 +91,6 @@
 
 .search-container button:hover {
     background-color: #005b47;
-}
-
-/* Centrar el título completamente y mantener el botón a la derecha */
-.header-pedidos {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.titulo {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    color: #007b5e;
-    margin: 0;
-}
-
-.btn-crear-contrato {
-    position: absolute;
-    right: 0;  /* Alinea el botón a la derecha */
-    padding: 15px 40px;
-    background-color: #007b5e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn-crear-contrato:hover {
-    background-color: #005b47;
-}
-
-.titulo-mis-contratos {
-    margin-top: -20px;  /* Ajuste del margen superior solo para Mis contratos */
-    font-size: 2.5rem;
-    color: #000;
 }
 
 .productos-grid {

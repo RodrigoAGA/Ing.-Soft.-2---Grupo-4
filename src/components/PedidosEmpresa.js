@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importar useNavigate de React Router
-import './PedidosProveedor.css';
+import './PedidosEmpresa.css';
 
-const PedidosProveedor = () => {
+const PedidosEmpresa = () => {
   const [terminoBusqueda, setTerminoBusqueda] = useState('');
   const [categoria, setCategoria] = useState('');
   const [mostrarMas, setMostrarMas] = useState(false);
-
-  const navigate = useNavigate(); // Define useNavigate para navegar entre páginas
 
   const alternarMostrarMas = () => {
     setMostrarMas(!mostrarMas);
@@ -15,15 +12,11 @@ const PedidosProveedor = () => {
 
   const manejarBusqueda = () => {
     console.log('Buscando:', terminoBusqueda, 'Categoría:', categoria);
-    // Aquí puedes agregar la lógica de búsqueda si es necesario
-  };
-
-  const irACrearContrato = () => {
-    navigate('/crear-contrato'); // Navegar a la página de Crear Contrato al hacer clic en "Crear contrato"
   };
 
   return (
     <div className="pedidos-container">
+
       <div className="search-container">
         <div className="search-bar">
           <input
@@ -44,16 +37,11 @@ const PedidosProveedor = () => {
         <button onClick={manejarBusqueda}>Buscar</button>
       </div>
 
-      <div className="header-pedidos">
-        <h1 className="titulo">Pedidos</h1>
-        <button className="btn-crear-contrato" onClick={irACrearContrato}>
-          Crear contrato
-        </button>
-      </div>
-
-      <h2 className="titulo-mis-contratos">Mis contratos</h2>
+      <h1 className="titulo">Pedidos</h1>
+      <h2>Contratos destacados</h2>
 
       <div className="productos-grid">
+
         <div className="producto-card">
           <img src={process.env.PUBLIC_URL + '/Papa.jpg'} alt="Papa" />
           <h3>Papa</h3>
@@ -71,7 +59,7 @@ const PedidosProveedor = () => {
               Contrato privado
             </p>
           </div>
-          <button>Eliminar contrato</button>
+          <button>Participar</button>
         </div>
 
         <div className="producto-card">
@@ -91,7 +79,7 @@ const PedidosProveedor = () => {
               Contrato privado
             </p>
           </div>
-          <button>Eliminar contrato</button>
+          <button>Participar</button>
         </div>
 
         <div className="producto-card">
@@ -111,7 +99,7 @@ const PedidosProveedor = () => {
               Contrato privado
             </p>
           </div>
-          <button>Eliminar contrato</button>
+          <button>Participar</button>
         </div>
 
         <div className="producto-card">
@@ -131,7 +119,7 @@ const PedidosProveedor = () => {
               Contrato privado
             </p>
           </div>
-          <button>Eliminar contrato</button>
+          <button>Participar</button>
         </div>
 
         {mostrarMas && (
@@ -153,7 +141,7 @@ const PedidosProveedor = () => {
                   Contrato privado
                 </p>
               </div>
-              <button>Eliminar contrato</button>
+              <button>Participar</button>
             </div>
 
             <div className="producto-card">
@@ -173,7 +161,7 @@ const PedidosProveedor = () => {
                   Contrato privado
                 </p>
               </div>
-              <button>Eliminar contrato</button>
+              <button>Participar</button>
             </div>
 
             <div className="producto-card">
@@ -196,7 +184,7 @@ const PedidosProveedor = () => {
                   Contrato privado
                 </p>
               </div>
-              <button>Eliminar contrato</button>
+              <button>Participar</button>
             </div>
 
             <div className="producto-card">
@@ -219,7 +207,7 @@ const PedidosProveedor = () => {
                   Contrato privado
                 </p>
               </div>
-              <button>Eliminar contrato</button>
+              <button>Participar</button>
             </div>
           </>
         )}
@@ -234,4 +222,4 @@ const PedidosProveedor = () => {
   );
 };
 
-export default PedidosProveedor;
+export default PedidosEmpresa;

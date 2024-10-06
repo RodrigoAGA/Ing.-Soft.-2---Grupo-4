@@ -1,7 +1,12 @@
 .soporte-container {
   display: flex;
+  flex-direction: row;
   height: 100vh;
+  width: 95%; /* Limita el ancho del viewport */
+  max-width: 100vw;
+  box-sizing: border-box;
 }
+
 
 .soporte-image {
   width: 50vw;
@@ -26,7 +31,7 @@
 
 .soporte-form h2 {
   text-align: left;
-  margin-left: 170px;
+  margin-left: 130px;
   width: 100%;
   font-size: 48px;
   font-weight: bold;
@@ -81,12 +86,12 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  margin-left: -200px;
+  margin-left: -180px;
   margin-bottom: 10px;
 }
 
 .soporte-form .checkbox-group label {
-  margin-left: -180px;
+  margin-left: -170px;
 }
 
 .soporte-form .submit-group {

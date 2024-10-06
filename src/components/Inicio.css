@@ -17,7 +17,7 @@
   color: white;
   text-align: left;
   max-width: 700px;
-  margin-right: 1000px;
+  margin-right: 700px;
   margin-top: 60px;
 }
 
@@ -130,7 +130,7 @@
 .estadisticas-header {
   margin-top: -20px;
   margin-bottom: 80px;
-  width: 33%;
+  width: 43%;
 }
 
 .estadisticas h3 {
@@ -147,7 +147,7 @@
   grid-template-columns: repeat(2, 1fr); /* Dos columnas */
   grid-gap: 20px;
   justify-items: start;
-  margin-left: 900px;
+  margin-left: 800px;
   margin-top: -300px;
 }
 
@@ -191,7 +191,7 @@
 
 .app-content {
   max-width: 690px;
-  margin-left: 160px;
+  margin-left: 50px;
   text-align: left;
 }
 

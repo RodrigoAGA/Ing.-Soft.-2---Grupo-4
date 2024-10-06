@@ -3,19 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-  const [MenuDesplegable, SetMenuDesplegable] = useState(false);
+  const [menuDesplegable, setMenuDesplegable] = useState(false);
   const navigate = useNavigate(); 
 
-  const AlternarMenuDesplegable = () => {
-    SetMenuDesplegable(!MenuDesplegable);
+  const alternarMenuDesplegable = () => {
+    setMenuDesplegable(!menuDesplegable);
   };
 
-  const LoginClick = () => {
-    SetMenuDesplegable(false); 
+  const loginClick = () => {
+    setMenuDesplegable(false); 
     navigate('/login'); 
   };
-  const RegisterClick = () => {
-    SetMenuDesplegable(false); 
+
+  const registerClick = () => {
+    setMenuDesplegable(false); 
     navigate('/signup'); 
   };
 
@@ -25,12 +26,12 @@ const Header = () => {
         <img src={process.env.PUBLIC_URL + '/allpa-logo.png'} alt="Allpa Logo" />
       </div>
       <nav className="nav-links">
-        <a href="/">Inicio</a>
-        <a href="/pedidos">Pedidos</a>
+        <a href="/inicio">Inicio</a>
+        <a href="/pedidos-empresa">Pedidos</a>
         <a href="#">Productos</a>
         <a href="#">Sobre nosotros</a>
         <div className="support-dropdown">
-          <a href="/soporte">Soporte &#9662;</a> 
+          <a href="/soporte">Soporte &#9662;</a>
         </div>
       </nav>
       <div className="icons">
@@ -40,13 +41,13 @@ const Header = () => {
           src={process.env.PUBLIC_URL + '/user-icon.png'} 
           alt="User" 
           className="user-icon"
-          onClick={AlternarMenuDesplegable}
+          onClick={alternarMenuDesplegable}  // Al hacer clic se despliega el menú
         />
-        {MenuDesplegable && (
-          <div className="dropdown-menu">                                           
+        {menuDesplegable && (
+          <div className="dropdown-menu">
             <h3>Bienvenido</h3>
-            <button className="dropdown-button" onClick={LoginClick}>Iniciar Sesión</button>
-            <button className="dropdown-button" onClick={RegisterClick}>Registrarse</button>
+            <button className="dropdown-button" onClick={loginClick}>Iniciar Sesión</button>
+            <button className="dropdown-button" onClick={registerClick}>Registrarse</button>
           </div>
         )}
       </div>

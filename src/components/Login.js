@@ -11,10 +11,10 @@ const Login = () => {
         <h2>Log In</h2>
         <form>
           <label htmlFor="email">Email Address</label>
-          <input type="email" id="email" placeholder="Placeholder" required />
+          <input type="email" id="email" placeholder="Email Address" required />
 
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="Placeholder" required />
+          <input type="password" id="password" placeholder="Password" required />
 
           <div className="remember-forgot">
             <div>
