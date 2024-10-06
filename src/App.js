@@ -9,6 +9,8 @@ import Soporte from './components/Soporte';
 import Pedidos from './components/Pedidos';
 import Inicio from './components/Inicio';
 import Footer from './components/Footer'
+import PedidosProveedor from './components/PedidosProveedor';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path="/inicio" element={<Inicio />} />
           <Route path="/soporte" element={<Soporte />} />
           <Route path="/pedidos" element={<Pedidos />} />
+          <Route path="/pedidos-proveedor" element={<PedidosProveedor/>} />
         </Routes>
         <Footer />
       </div>
