@@ -37,8 +37,13 @@ const PedidosEmpresa = () => {
         <button onClick={manejarBusqueda}>Buscar</button>
       </div>
 
-      <h1 className="titulo">Pedidos</h1>
-      <h2>Contratos destacados</h2>
+      <div className="header-pedidos">
+        <h1 className="titulo">Pedidos</h1>
+        <button className="btn-crear-contrato">
+          Ver contratos
+        </button>
+      </div>
+      <h2 className="titulo-contratos-destacados">Contratos Destacados</h2>
 
       <div className="productos-grid">
 
