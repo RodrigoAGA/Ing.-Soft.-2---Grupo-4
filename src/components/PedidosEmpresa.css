@@ -176,7 +176,7 @@ button:hover {
 
 .btn-crear-contrato {
     position: absolute;
-    right: 0;  /* Alinea el botón a la derecha */
+    right: 0; 
     padding: 15px 40px;
     background-color: #007b5e;
     color: white;
@@ -190,7 +190,7 @@ button:hover {
     background-color: #005b47;
 }
 .titulo-contratos-destacados {
-    margin-top: -20px;  /* Ajuste del margen superior solo para Mis contratos */
+    margin-top: -20px; 
     font-size: 2.5rem;
     color: #000;
 }
