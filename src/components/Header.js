@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [menuDesplegable, setMenuDesplegable] = useState(false);
-  const navigate = useNavigate(); 
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem('loggedInUser');
+    if (user) {
+      setLoggedInUser(user);
+    }
+  }, []);
 
   const alternarMenuDesplegable = () => {
     setMenuDesplegable(!menuDesplegable);
   };
 
-  const loginClick = () => {
-    setMenuDesplegable(false); 
-    navigate('/login'); 
-  };
-
-  const registerClick = () => {
-    setMenuDesplegable(false); 
-    navigate('/signup'); 
+  const handleLogout = () => {
+    localStorage.removeItem('loggedInUser');
+    setLoggedInUser(null);
+    navigate('/login'); // Redirigir al login tras el cierre de sesión
   };
 
   return (
@@ -41,13 +45,22 @@ const Header = () => {
           src={process.env.PUBLIC_URL + '/user-icon.png'} 
           alt="User" 
           className="user-icon"
-          onClick={alternarMenuDesplegable}  // Al hacer clic se despliega el menú
+          onClick={alternarMenuDesplegable}
         />
         {menuDesplegable && (
           <div className="dropdown-menu">
-            <h3>Bienvenido</h3>
-            <button className="dropdown-button" onClick={loginClick}>Iniciar Sesión</button>
-            <button className="dropdown-button" onClick={registerClick}>Registrarse</button>
+            {loggedInUser ? (
+              <>
+                <h3>Bienvenido, {loggedInUser}</h3>
+                <button className="dropdown-button" onClick={handleLogout}>Cerrar Sesión</button>
+              </>
+            ) : (
+              <>
+                <h3>Bienvenido</h3>
+                <button className="dropdown-button" onClick={() => navigate('/login')}>Iniciar Sesión</button>
+                <button className="dropdown-button" onClick={() => navigate('/signup')}>Registrarse</button>
+              </>
+            )}
           </div>
         )}
       </div>

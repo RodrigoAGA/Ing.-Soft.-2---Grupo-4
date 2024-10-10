@@ -54,7 +54,7 @@
   height: 24px;
   cursor: pointer;
 }
-
+/* Estilo normal del menú desplegable */
 .dropdown-menu {
   position: absolute;
   top: 60px; 
@@ -64,16 +64,22 @@
   border: 1px solid #eaeaea;
   border-radius: 8px;
   padding: 20px;
-  width: 200px;
+  width: 200px; /* Ancho por defecto */
   z-index: 1000;
+}
+
+/* Cambios para cuando el usuario ha iniciado sesión */
+.dropdown-menu.logged-in {
+  width: 240px; /* Ancho mayor cuando el usuario está autenticado */
 }
 
 .dropdown-menu h3 {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 16px; /* Reducimos un poco el tamaño de la fuente del nombre de usuario */
   margin-bottom: 15px;
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 10px;
+  word-break: break-word; /* Permite que el nombre de usuario se divida en varias líneas si es necesario */
 }
 
 .dropdown-button {
