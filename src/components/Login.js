@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css'; // Estilos para el componente
+import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -20,6 +20,10 @@ const Login = () => {
     } else {
       alert('Credenciales incorrectas');
     }
+  };
+
+  const handleForgotPassword = () => {
+    navigate('/restablecer-contraseña');  // Redirigir a la página de restablecer contraseña
   };
 
   return (
@@ -55,12 +59,11 @@ const Login = () => {
               <input type="checkbox" id="remember" />
               <label htmlFor="remember">Remember me</label>
             </div>
-            <a href="#">Forgot Password?</a>
+            <a href="#" onClick={handleForgotPassword}>Forgot Password?</a>
           </div>
 
           <button type="submit">Log In</button>
 
-          {/* Al hacer clic en cualquier botón se hace login */}
           <div className="social-login">
             <button type="submit" className="google-login">Log in with Google</button>
             <button type="submit" className="apple-login">Log in with Apple</button>

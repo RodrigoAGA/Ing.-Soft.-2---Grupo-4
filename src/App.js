@@ -10,6 +10,7 @@ import PedidosProveedor from './components/PedidosProveedor';
 import Inicio from './components/Inicio';
 import CrearContrato from './components/CrearContrato';
 import Footer from './components/Footer';
+import RestablecerContraseña from './funcionalidades/RestablecerPassword/RestablecerContraseña';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/pedidos-empresa" element={<PedidosEmpresa />} />
           <Route path="/pedidos-proveedor" element={<PedidosProveedor />} />
           <Route path="/crear-contrato" element={<CrearContrato />} />
+          <Route path="/restablecer-contraseña" element={<RestablecerContraseña />} />
         </Routes>
         <Footer />
       </div>
