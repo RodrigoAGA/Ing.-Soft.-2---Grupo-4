@@ -5,12 +5,14 @@ import './Header.css';
 const Header = () => {
   const [menuDesplegable, setMenuDesplegable] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
+  const [userType, setUserType] = useState(null); // Manejamos el tipo de usuario
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = localStorage.getItem('loggedInUser');
+    const user = JSON.parse(localStorage.getItem('loggedInUser')); // Obtenemos el usuario completo
     if (user) {
-      setLoggedInUser(user);
+      setLoggedInUser(user.email);
+      setUserType(user.accountType); // Establecemos el tipo de cuenta (proveedor o empresa)
     }
   }, []);
 
@@ -21,6 +23,7 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem('loggedInUser');
     setLoggedInUser(null);
+    setUserType(null); // Limpiamos el tipo de cuenta
     navigate('/login'); // Redirigir al login tras el cierre de sesión
   };
 
@@ -31,7 +34,11 @@ const Header = () => {
       </div>
       <nav className="nav-links">
         <a href="/inicio">Inicio</a>
-        <a href="/pedidos-empresa">Pedidos</a>
+        {userType === 'empresa' ? (
+          <a href="/pedidos-empresa">Pedidos Empresa</a>
+        ) : (
+          <a href="/pedidos-proveedor">Pedidos Proveedor</a>
+        )}
         <a href="#">Productos</a>
         <a href="#">Sobre nosotros</a>
         <div className="support-dropdown">

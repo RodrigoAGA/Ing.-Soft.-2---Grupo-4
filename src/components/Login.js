@@ -32,7 +32,13 @@ const Login = () => {
 
     if (AuthService.verify2FACode(verificationCode, generatedCode)) {
       alert('Sesión iniciada correctamente');
-      localStorage.setItem('loggedInUser', email); // Guardar el usuario autenticado
+
+      // Obtener el usuario completo del servicio de autenticación
+      const user = AuthService.getUserByEmail(email);
+      
+      // Guardar el usuario completo (email + accountType)
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
+
       navigate('/inicio'); // Redirigir a la página de inicio
     } else {
       alert('Código de verificación incorrecto');
@@ -90,7 +96,7 @@ const Login = () => {
           </form>
         ) : (
           <form onSubmit={handle2FA}>
-            <h2 >Introduce el código de verificación</h2>
+            <h2>Introduce el código de verificación</h2>
             <label htmlFor="verificationCode">Código de Verificación</label>
             <input
               type="text"

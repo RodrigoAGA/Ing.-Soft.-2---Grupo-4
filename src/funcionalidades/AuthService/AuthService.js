@@ -8,17 +8,14 @@ const AuthService = {
     return Math.floor(100000 + Math.random() * 900000).toString();
   },
 
-  verify2FACode: (enteredCode, generatedCode) => {
-    return enteredCode === generatedCode;
+  verify2FACode: (inputCode, generatedCode) => {
+    return inputCode === generatedCode;
   },
 
-  resetPassword: (email, newPassword) => {
+  getUserByEmail: (email) => {
     const users = JSON.parse(localStorage.getItem('users')) || [];
-    const updatedUsers = users.map(user => user.email === email ? { ...user, password: newPassword } : user);
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
+    return users.find(user => user.email === email);
   }
 };
 
 export default AuthService;
-
-  
