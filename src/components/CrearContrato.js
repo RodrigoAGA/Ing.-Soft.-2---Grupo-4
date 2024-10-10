@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CrearContrato.css';
+import ContratoService from '../funcionalidades/ServicioContrato/ContratoService'; // Importamos el servicio de contratos
 
 const CrearContrato = () => {
   const [categoria, setCategoria] = useState('');
@@ -25,7 +26,28 @@ const CrearContrato = () => {
 
   const manejarEnvioFormulario = (e) => {
     e.preventDefault();
-    console.log('Contrato creado');
+
+    const contrato = {
+      empresa: document.getElementById('empresa').value,
+      tipoContrato: document.getElementById('tipoContrato').value,
+      cantidad: document.getElementById('cantidad').value,
+      fechaPublicacion: document.getElementById('fechaPublicacion').value,
+      categoria,
+      producto,
+      imagen
+    };
+    
+    ContratoService.crearContrato(contrato); // Usamos el servicio para crear el contrato
+    alert('Contrato creado exitosamente');
+
+    // Limpiar el formulario después de crear el contrato
+    document.getElementById('empresa').value = '';
+    document.getElementById('tipoContrato').value = '';
+    document.getElementById('cantidad').value = '';
+    document.getElementById('fechaPublicacion').value = '';
+    setCategoria('');
+    setProducto('');
+    setImagen('');
   };
 
   return (
@@ -84,3 +106,4 @@ const CrearContrato = () => {
 };
 
 export default CrearContrato;
+

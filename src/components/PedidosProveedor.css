@@ -1,5 +1,5 @@
 .pedidos-container {
-    padding: 120px 20px;
+    padding: 100px 20px; /* Reducir el padding superior para acercar más la página */
     text-align: center;
 }
 
@@ -7,8 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -30px;
-    margin-bottom: 20px;
+    margin-top: -20px; /* Reducir el margen superior */
+    margin-bottom: 30px; /* Aumentar el margen inferior */
     gap: 10px;
 }
 
@@ -85,7 +85,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .titulo {
@@ -113,14 +113,16 @@
 
 .titulo-mis-contratos {
     margin-top: -20px;  /* Ajuste del margen superior solo para Mis contratos */
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     color: #000;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr); /* Mantiene cuatro columnas */
+    gap: 15px; /* Aumenta el espacio entre los contratos */
     justify-items: center;
 }
 
@@ -134,6 +136,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 30px; /* Añade espacio extra inferior */
 }
 
 .producto-card img {
