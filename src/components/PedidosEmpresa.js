@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PedidosEmpresa.css';
+import ContratoService from '../funcionalidades/ServicioContrato/ContratoService';
 
 const PedidosEmpresa = () => {
   const [terminoBusqueda, setTerminoBusqueda] = useState('');
   const [categoria, setCategoria] = useState('');
   const [mostrarMas, setMostrarMas] = useState(false);
+  const [contratos, setContratos] = useState([]);
+
+  useEffect(() => {
+    const contratosGuardados = ContratoService.obtenerContratos();
+    setContratos(contratosGuardados);
+  }, []);
 
   const alternarMostrarMas = () => {
     setMostrarMas(!mostrarMas);
@@ -14,9 +21,10 @@ const PedidosEmpresa = () => {
     console.log('Buscando:', terminoBusqueda, 'Categoría:', categoria);
   };
 
+  const contratosMostrar = mostrarMas ? contratos : contratos.slice(0, 4);
+
   return (
     <div className="pedidos-container">
-
       <div className="search-container">
         <div className="search-bar">
           <input
@@ -32,196 +40,49 @@ const PedidosEmpresa = () => {
           <option value="vegetales">Vegetales</option>
           <option value="granos">Granos</option>
           <option value="frutas">Frutas</option>
-          <option value="otros">Otros</option>
         </select>
         <button onClick={manejarBusqueda}>Buscar</button>
       </div>
 
       <div className="header-pedidos">
         <h1 className="titulo">Pedidos</h1>
-        <button className="btn-crear-contrato">
+        <button className="btn-ver-contratos">
           Ver contratos
         </button>
       </div>
       <h2 className="titulo-contratos-destacados">Contratos Destacados</h2>
 
       <div className="productos-grid">
-
-        <div className="producto-card">
-          <img src={process.env.PUBLIC_URL + '/Papa.jpg'} alt="Papa" />
-          <h3>Papa</h3>
-          <div className="descripcion-producto">
-            <p>
-              Tubérculo comestible cultivado en varias partes del mundo.
-              <br />
-              Cantidad: 9999 tn.
-              <br />
-              Fecha: 01/01/2023
-            </p>
-            <p>
-              Nombre de la empresa
-              <br />
-              Contrato privado
-            </p>
-          </div>
-          <button>Participar</button>
-        </div>
-
-        <div className="producto-card">
-          <img src={process.env.PUBLIC_URL + '/Quinua.jpg'} alt="Quinua" />
-          <h3>Quinua</h3>
-          <div className="descripcion-producto">
-            <p>
-              Planta andina de la que se obtienen granos ricos en proteínas.
-              <br />
-              Cantidad: 9999 tn.
-              <br />
-              Fecha: 01/01/2023
-            </p>
-            <p>
-              Nombre de la empresa
-              <br />
-              Contrato privado
-            </p>
-          </div>
-          <button>Participar</button>
-        </div>
-
-        <div className="producto-card">
-          <img src={process.env.PUBLIC_URL + '/Maiz.jpg'} alt="Maíz" />
-          <h3>Maíz</h3>
-          <div className="descripcion-producto">
-            <p>
-              Especie de planta gramínea anual originaria de Mesoamérica.
-              <br />
-              Cantidad: 9999 tn.
-              <br />
-              Fecha: 01/01/2023
-            </p>
-            <p>
-              Nombre de la empresa
-              <br />
-              Contrato privado
-            </p>
-          </div>
-          <button>Participar</button>
-        </div>
-
-        <div className="producto-card">
-          <img src={process.env.PUBLIC_URL + '/Trigo.jpg'} alt="Trigo" />
-          <h3>Trigo</h3>
-          <div className="descripcion-producto">
-            <p>
-              Planta gramínea con espigas de cuyos granos molidos se saca la harina.
-              <br />
-              Cantidad: 9999 tn.
-              <br />
-              Fecha: 01/01/2023
-            </p>
-            <p>
-              Nombre de la empresa
-              <br />
-              Contrato privado
-            </p>
-          </div>
-          <button>Participar</button>
-        </div>
-
-        {mostrarMas && (
-          <>
-            <div className="producto-card">
-              <img src={process.env.PUBLIC_URL + '/Arroz.jpg'} alt="Arroz" />
-              <h3>Arroz</h3>
+        {contratosMostrar.length > 0 ? (
+          contratosMostrar.map((contrato, index) => (
+            <div key={index} className="producto-card">
+              <img src={contrato.imagen} alt={contrato.producto} />
+              <h3>{contrato.producto}</h3>
               <div className="descripcion-producto">
                 <p>
-                  Cereal básico en muchas culturas culinarias del mundo.
+                  Empresa: {contrato.empresa}
                   <br />
-                  Cantidad: 9999 tn.
+                  Tipo de contrato: {contrato.tipoContrato}
                   <br />
-                  Fecha: 01/01/2023
-                </p>
-                <p>
-                  Nombre de la empresa
+                  Cantidad: {contrato.cantidad} tn.
                   <br />
-                  Contrato privado
+                  Fecha: {contrato.fechaPublicacion}
                 </p>
               </div>
               <button>Participar</button>
             </div>
-
-            <div className="producto-card">
-              <img src={process.env.PUBLIC_URL + '/Algodon.jpg'} alt="Algodón" />
-              <h3>Algodón</h3>
-              <div className="descripcion-producto">
-                <p>
-                  Fibra natural utilizada principalmente para la producción de textiles.
-                  <br />
-                  Cantidad: 9999 tn.
-                  <br />
-                  Fecha: 01/01/2023
-                </p>
-                <p>
-                  Nombre de la empresa
-                  <br />
-                  Contrato privado
-                </p>
-              </div>
-              <button>Participar</button>
-            </div>
-
-            <div className="producto-card">
-              <img
-                src={process.env.PUBLIC_URL + '/Kiwicha.jpg'}
-                alt="Kiwicha"
-              />
-              <h3>Kiwicha</h3>
-              <div className="descripcion-producto">
-                <p>
-                  Pseudocereal de gran valor nutritivo originario de los Andes.
-                  <br />
-                  Cantidad: 9999 tn.
-                  <br />
-                  Fecha: 01/01/2023
-                </p>
-                <p>
-                  Nombre de la empresa
-                  <br />
-                  Contrato privado
-                </p>
-              </div>
-              <button>Participar</button>
-            </div>
-
-            <div className="producto-card">
-              <img
-                src={process.env.PUBLIC_URL + '/Canihua.jpg'}
-                alt="Cañihua"
-              />
-              <h3>Cañihua</h3>
-              <div className="descripcion-producto">
-                <p>
-                  Grano pequeño originario de los Andes, similar a la quinua.
-                  <br />
-                  Cantidad: 9999 tn.
-                  <br />
-                  Fecha: 01/01/2023
-                </p>
-                <p>
-                  Nombre de la empresa
-                  <br />
-                  Contrato privado
-                </p>
-              </div>
-              <button>Participar</button>
-            </div>
-          </>
+          ))
+        ) : (
+          <p>No hay contratos disponibles.</p>
         )}
       </div>
 
       <div className="ver-mas-container">
-        <button className="ver-mas" onClick={alternarMostrarMas}>
-          {mostrarMas ? 'Ver menos' : 'Ver más'}
-        </button>
+        {contratos.length > 4 && (
+          <button className="ver-mas" onClick={alternarMostrarMas}>
+            {mostrarMas ? 'Ver menos' : 'Ver más'}
+          </button>
+        )}
       </div>
     </div>
   );
