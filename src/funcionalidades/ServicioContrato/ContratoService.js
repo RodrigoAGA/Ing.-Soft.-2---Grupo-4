@@ -15,18 +15,30 @@ const ContratoService = {
 
   eliminarContrato: (index) => {
     const contratosExistentes = JSON.parse(localStorage.getItem('contratos')) || [];
-    contratosExistentes.splice(index, 1);  // Elimina el contrato en el índice indicado
-    localStorage.setItem('contratos', JSON.stringify(contratosExistentes));  // Actualiza el localStorage
+    contratosExistentes.splice(index, 1);
+    localStorage.setItem('contratos', JSON.stringify(contratosExistentes));
   },
 
-  buscarContratos: (terminoBusqueda) => {
-    const contratos = JSON.parse(localStorage.getItem('contratos')) || [];
-    return contratos.filter(contrato => contrato.producto.toLowerCase().includes(terminoBusqueda.toLowerCase()));
+  registrarParticipacion: (indexContrato, correoUsuario) => {
+    const contratosExistentes = JSON.parse(localStorage.getItem('contratos')) || [];
+    const contrato = contratosExistentes[indexContrato];
+
+    if (!contrato.participantes) {
+      contrato.participantes = []; // Inicializa la lista de participantes si no existe
+    }
+
+    // Evita agregar el mismo participante varias veces
+    if (!contrato.participantes.includes(correoUsuario)) {
+      contrato.participantes.push(correoUsuario);
+    }
+
+    localStorage.setItem('contratos', JSON.stringify(contratosExistentes)); // Actualiza los contratos en localStorage
   },
 
-  filtrarPorCategoria: (categoria) => {
-    const contratos = JSON.parse(localStorage.getItem('contratos')) || [];
-    return contratos.filter(contrato => contrato.categoria === categoria);
+  obtenerParticipantes: (indexContrato) => {
+    const contratosExistentes = JSON.parse(localStorage.getItem('contratos')) || [];
+    const contrato = contratosExistentes[indexContrato];
+    return contrato.participantes || []; // Devuelve la lista de participantes o un array vacío
   }
 };
 

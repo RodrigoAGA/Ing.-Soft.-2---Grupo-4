@@ -8,6 +8,10 @@ const PedidosEmpresa = () => {
   const [mostrarMas, setMostrarMas] = useState(false);
   const [contratos, setContratos] = useState([]);
 
+  // Obtenemos el correo del usuario logueado desde localStorage
+  const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const correoUsuario = loggedInUser?.email || '';  // Obtenemos el correo del usuario logueado
+
   useEffect(() => {
     const contratosGuardados = ContratoService.obtenerContratos();
     setContratos(contratosGuardados);
@@ -19,6 +23,13 @@ const PedidosEmpresa = () => {
 
   const manejarBusqueda = () => {
     console.log('Buscando:', terminoBusqueda, 'Categoría:', categoria);
+  };
+
+  const participarEnContrato = (indexContrato) => {
+    ContratoService.registrarParticipacion(indexContrato, correoUsuario);  // Registra la participación de la empresa
+    alert(`Has participado en el contrato ${contratos[indexContrato].producto}`);
+    const contratosActualizados = ContratoService.obtenerContratos();
+    setContratos(contratosActualizados);  // Actualiza la lista de contratos en la UI
   };
 
   const contratosMostrar = mostrarMas ? contratos : contratos.slice(0, 4);
@@ -33,7 +44,7 @@ const PedidosEmpresa = () => {
             value={terminoBusqueda}
             onChange={(e) => setTerminoBusqueda(e.target.value)}
           />
-          <span className="search-icon">&#128269;</span> {/* Icono de lupa */}
+          <span className="search-icon">&#128269;</span>
         </div>
         <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
           <option value="">Categorías</option>
@@ -69,7 +80,12 @@ const PedidosEmpresa = () => {
                   Fecha: {contrato.fechaPublicacion}
                 </p>
               </div>
-              <button>Participar</button>
+              <div className="acciones-contrato">
+                <button onClick={() => participarEnContrato(index)}>Participar</button>
+                <button onClick={() => alert(`Participantes: ${ContratoService.obtenerParticipantes(index).join(', ')}`)}>
+                  Ver participantes
+                </button>
+              </div>
             </div>
           ))
         ) : (
@@ -89,3 +105,4 @@ const PedidosEmpresa = () => {
 };
 
 export default PedidosEmpresa;
+
