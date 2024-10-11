@@ -11,6 +11,7 @@ import Inicio from './components/Inicio';
 import CrearContrato from './components/CrearContrato';
 import Footer from './components/Footer';
 import RestablecerContraseña from './funcionalidades/RestablecerPassword/RestablecerContraseña';
+import NotificacionesProveedor from './funcionalidades/NotificacionesProveedor/NotificacionesProveedor';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/pedidos-proveedor" element={<PedidosProveedor />} />
           <Route path="/crear-contrato" element={<CrearContrato />} />
           <Route path="/restablecer-contraseña" element={<RestablecerContraseña />} />
+          <Route path="/notificaciones" element={<NotificacionesProveedor />} />
         </Routes>
         <Footer />
       </div>

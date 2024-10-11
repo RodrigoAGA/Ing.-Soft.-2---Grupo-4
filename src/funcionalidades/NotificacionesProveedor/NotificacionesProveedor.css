@@ -1,0 +1,24 @@
+.notificaciones-container {
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .notificaciones-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .notificacion-card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    text-align: left;
+  }
+  
+  .notificacion-card p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
