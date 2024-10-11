@@ -92,7 +92,9 @@ const PedidosProveedor = () => {
               </div>
               <div className="botones-contrato">
                 <button onClick={() => eliminarContrato(index)}>Eliminar contrato</button>
-                <button onClick={() => mostrarParticipantes(index)}>Ver participantes</button>
+                <button onClick={() => window.location.href = `/firmar-contrato/${index}`}>
+                  Ver participantes
+                </button>
               </div>
             </div>
           ))

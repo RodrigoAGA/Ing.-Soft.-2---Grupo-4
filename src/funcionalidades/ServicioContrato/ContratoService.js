@@ -62,6 +62,23 @@ const ContratoService = {
     const notificacionesExistentes = JSON.parse(localStorage.getItem('notificaciones')) || [];
     const notificacionesFiltradas = notificacionesExistentes.filter(notificacion => notificacion.empresa !== empresa);
     localStorage.setItem('notificaciones', JSON.stringify(notificacionesFiltradas));
+  },
+
+  firmarContrato: (indexContrato, correoUsuario) => {
+    const contratosExistentes = JSON.parse(localStorage.getItem('contratos')) || [];
+    const contrato = contratosExistentes[indexContrato];
+
+    // Actualizar el contrato como firmado con el participante seleccionado
+    contrato.firmado = true;
+    contrato.participanteElegido = correoUsuario;
+
+    localStorage.setItem('contratos', JSON.stringify(contratosExistentes));
+  },
+
+  obtenerParticipantes: (indexContrato) => {
+    const contratosExistentes = JSON.parse(localStorage.getItem('contratos')) || [];
+    const contrato = contratosExistentes[indexContrato];
+    return contrato.participantes || []; // Devuelve la lista de participantes o un array vacío
   }
 };
 
