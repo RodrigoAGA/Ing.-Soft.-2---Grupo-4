@@ -61,11 +61,16 @@ const PedidosProveedor = () => {
 
       <div className="header-pedidos">
         <h1 className="titulo">Pedidos</h1>
-        <button className="btn-crear-contrato" onClick={() => window.location.href = '/crear-contrato'}>
-          Crear contrato
-        </button>
+        <div className="botones-header">
+          <button className="btn-notificaciones" onClick={() => window.location.href = '/notificaciones'}>
+              Ver Notificaciones
+          </button>
+          <button className="btn-crear-contrato" onClick={() => window.location.href = '/crear-contrato'}>
+              Crear contrato
+          </button>
+        </div>
       </div>
-
+      
       <h2 className="titulo-mis-contratos">Mis contratos</h2>
 
       <div className="productos-grid">

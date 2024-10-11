@@ -81,11 +81,11 @@
 
 /* Centrar el título completamente y mantener el botón a la derecha */
 .header-pedidos {
-    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centra el título */
     align-items: center;
     margin-bottom: 30px;
+    position: relative;
 }
 
 .titulo {
@@ -93,12 +93,23 @@
     text-transform: uppercase;
     color: #007b5e;
     margin: 0;
+    position: absolute;
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado con la mitad del ancho */
 }
 
 .btn-crear-contrato {
-    position: absolute;
-    right: 0;  /* Alinea el botón a la derecha */
-    padding: 15px 40px;
+    padding: 15px 20px;
+    background-color: #007b5e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.btn-notificaciones {
+    padding: 15px 20px;
     background-color: #007b5e;
     color: white;
     border: none;
@@ -106,7 +117,13 @@
     font-size: 16px;
     cursor: pointer;
 }
-
+.botones-header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* Espacio entre los botones */
+    position: absolute;
+    right: 20px;
+}
 .btn-crear-contrato:hover {
     background-color: #005b47;
 }
@@ -228,65 +245,6 @@ button:hover {
 
 .botones-contrato button:last-child {
     border-radius: 0 5px 5px 0; /* Redondea solo la esquina derecha del último botón */
-}
-
-.botones-contrato button:hover {
-    background-color: #005b47;
-}
-.producto-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.producto-card h3 {
-    font-size: 20px;
-    margin: 10px 0 5px 0;
-}
-
-.descripcion-producto {
-    padding: 10px;
-    text-align: left;
-    max-width: 90%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-.descripcion-producto p {
-    margin: 5px 0;
-}
-
-.botones-contrato {
-    display: flex;
-    justify-content: space-between;
-    gap: 0;
-    margin-top: 10px;
-}
-
-.botones-contrato button {
-    width: 50%;
-    padding: 12px;
-    background-color: #007b5e;
-    color: white;
-    border: none;
-    border-radius: 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.botones-contrato button:first-child {
-    border-radius: 0 0 0 5px;
-}
-
-.botones-contrato button:last-child {
-    border-radius: 0 0 5px 0;
 }
 
 .botones-contrato button:hover {
