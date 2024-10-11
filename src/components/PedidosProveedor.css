@@ -200,3 +200,24 @@ button:hover {
 .ver-mas:hover {
     background-color: #005b47;
 }
+.botones-contrato {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .botones-contrato button {
+    width: 48%;
+    padding: 10px;
+    background-color: #007b5e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botones-contrato button:hover {
+    background-color: #005b47;
+  }
+  

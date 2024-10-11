@@ -27,6 +27,15 @@ const PedidosProveedor = () => {
     setContratos(nuevosContratos);
   };
 
+  const mostrarParticipantes = (indexContrato) => {
+    const participantes = ContratoService.obtenerParticipantes(indexContrato);
+    if (participantes && participantes.length > 0) {
+      alert(`Participantes: ${participantes.join(', ')}`);
+    } else {
+      alert('No hay participantes en este contrato.');
+    }
+  };
+
   const contratosMostrar = mostrarMas ? contratos : contratos.slice(0, 4);
 
   return (
@@ -76,7 +85,10 @@ const PedidosProveedor = () => {
                   Fecha: {contrato.fechaPublicacion}
                 </p>
               </div>
-              <button onClick={() => eliminarContrato(index)}>Eliminar contrato</button>
+              <div className="botones-contrato">
+                <button onClick={() => eliminarContrato(index)}>Eliminar contrato</button>
+                <button onClick={() => mostrarParticipantes(index)}>Ver participantes</button>
+              </div>
             </div>
           ))
         ) : (
