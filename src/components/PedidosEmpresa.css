@@ -195,3 +195,19 @@ button:hover {
     font-size: 2.3rem;
     color: #000;
 }
+.acciones-contrato{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 0; /* Elimina el espacio entre los botones */
+}
+.acciones-contrato button {
+    width: 49.5%; /* Asegura que ambos botones ocupen la mitad del espacio */
+    padding: 12px; /* Ajusta ligeramente el padding para que se vean más compactos */
+    background-color: #007b5e;
+    color: white;
+    border-color: black;
+    border-radius: 0; /* Elimina los bordes redondeados para que queden juntos */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

@@ -148,8 +148,9 @@
 }
 
 .producto-card h3 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px 0 5px 0;
+    font-weight: bold;
 }
 
 .descripcion-producto {
@@ -161,6 +162,8 @@
 }
 
 .descripcion-producto p {
+    font-size: 14px; /* Ajusta el tamaño del texto para hacerlo más compacto */
+    line-height: 1.4; /* Mejora la legibilidad con un poco de espacio entre líneas */
     margin: 5px 0;
 }
 
@@ -200,24 +203,92 @@ button:hover {
 .ver-mas:hover {
     background-color: #005b47;
 }
+
 .botones-contrato {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-  }
-  
-  .botones-contrato button {
-    width: 48%;
+    gap: 0; /* Elimina el espacio entre los botones */
+}
+
+.botones-contrato button {
+    width: 49.5%; /* Asegura que ambos botones ocupen la mitad del espacio */
+    padding: 12px; /* Ajusta ligeramente el padding para que se vean más compactos */
+    background-color: #007b5e;
+    color: white;
+    border-color: black;
+    border-radius: 0; /* Elimina los bordes redondeados para que queden juntos */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botones-contrato button:first-child {
+    border-radius: 5px 0 0 5px; /* Redondea solo la esquina izquierda del primer botón */
+}
+
+.botones-contrato button:last-child {
+    border-radius: 0 5px 5px 0; /* Redondea solo la esquina derecha del último botón */
+}
+
+.botones-contrato button:hover {
+    background-color: #005b47;
+}
+.producto-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.producto-card h3 {
+    font-size: 20px;
+    margin: 10px 0 5px 0;
+}
+
+.descripcion-producto {
     padding: 10px;
+    text-align: left;
+    max-width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.descripcion-producto p {
+    margin: 5px 0;
+}
+
+.botones-contrato {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    margin-top: 10px;
+}
+
+.botones-contrato button {
+    width: 50%;
+    padding: 12px;
     background-color: #007b5e;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .botones-contrato button:hover {
+}
+
+.botones-contrato button:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+.botones-contrato button:last-child {
+    border-radius: 0 0 5px 0;
+}
+
+.botones-contrato button:hover {
     background-color: #005b47;
-  }
-  
+}
